@@ -1,0 +1,36 @@
+  .card_login {
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.301);
+  }
+
+  .button_login-principal {
+      --background: linear-gradient(135deg, #3b82f6, #06b6d4);
+      --border-radius: 12px;
+      --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .social-login-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .social-login {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+
+      ion-button {
+          --background: linear-gradient(135deg, #3b83f69c, #06b5d493);
+          --border-radius: 50%;
+          --padding-start: 12px;
+          --padding-end: 12px;
+          font-size: 24px;
+          --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.384);
+      }
+  }

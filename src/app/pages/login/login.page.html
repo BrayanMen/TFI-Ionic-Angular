@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Inicio de Sesion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="login_container">
+  <ion-card class="card_login">
+    <ion-card-header>
+      <ion-card-title>Inicio de Sesion</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (ngSubmit)="loginUser()" [formGroup]="formularioLogin">
+        <ion-item>
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          <div>
+            <ion-label position="floating">Correo</ion-label>
+            <ion-input
+              type="email"
+              inputmode="email"
+              formControlName="email"
+            ></ion-input>
+          </div>
+          @if((formularioLogin.get('email')?.dirty ||
+          formularioLogin.get('email')?.touched)&&
+          formularioLogin.get('email')?.errors){
+          <ion-text color="danger"> Ingresa tu correo adecuadamente </ion-text>
+          }
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+          @if((formularioLogin.get('password')?.dirty ||
+          formularioLogin.get('password')?.touched)&&
+          formularioLogin.get('password')?.errors){
+          <ion-text color="danger"> Contraseña Invalida </ion-text>
+          }
+        </ion-item>
+        <br />
+        <ion-button
+          expand="block"
+          type="submit"
+          class="button_login-principal"
+          [disabled]="formularioLogin.invalid"
+          >Iniciar Sesion</ion-button
+        >
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="social-login-container">
+    <h2>Iniciar Sesion con:</h2>
+
+    <div class="social-login">
+      <ion-button fill="clear" (click)="loginGoogle()">
+        <ion-icon slot="icon-only" name="logo-google"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" (click)="loginDiscord()">
+        <ion-icon slot="icon-only" name="logo-discord"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/register']">Registrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

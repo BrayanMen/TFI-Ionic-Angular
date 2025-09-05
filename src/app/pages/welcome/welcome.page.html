@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button><</ion-back-button>
+    </ion-buttons>
+    <ion-title>Mi App</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logOut()">Cerrar Sesion</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Bienvenido</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <h1>Bienvenido a mi App</h1>
+</ion-content>

@@ -1,3 +1,9 @@
 <ion-app>
+  @if (showSplash) {
+  <div class="splash-screen">
+    <img src="../assets/splash/splash.png" alt="Splash" class="logo" />
+  </div>
+  } @else if(!showSplash) {
   <ion-router-outlet></ion-router-outlet>
+  }
 </ion-app>
